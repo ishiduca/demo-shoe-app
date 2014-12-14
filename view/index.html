@@ -1,0 +1,41 @@
+<!doctype html>
+<head>
+{{#each styles}}
+<link rel="stylesheet" type="text/css" href="{{this.href}}" />
+{{/each}}
+<title>{{title}}</title>
+</head>
+<body>
+<header id="top-header">
+<h1>{{title}}</h1>
+</header>
+
+<div id="meta"></div>
+
+<main id="main">
+    <div id="l-form">
+        <form id="f" action="javascript:void(0)">
+            <dl>
+                <dt>name: </dt>
+                <dd><input
+                        id="name"
+                        type="text"
+                        placeholder="your name"
+                /></dd>
+                <dt>message: </dt>
+                <dd><input
+                        id="message"
+                        type="text"
+                        placeholder="message"
+                /></dd>
+                <div><button type="submit">post</button></div>
+            </dl>
+        </form>
+    </div>
+    <div id="l-results">
+        <ul id="results"></ul>
+    </div>
+</main>
+
+<script src="{{bundle_js}}"></script>
+</body>

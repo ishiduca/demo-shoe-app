@@ -1,0 +1,43 @@
+{
+  "name": "demo-shoe-app",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "browserify -t browserify-handlebars ./app/main.js -o ./public/js/bundle.js",
+    "start": "npm run build && NODE_PATH=lib node app.js &"
+  },
+  "dependencies": {
+    "browserify-handlebars": "^1.0.0",
+    "filed": "^0.1.0",
+    "handlebars": "^2.0.0",
+    "shoe": "0.0.15"
+  },
+  "config": {
+    "server": {
+      "port": 3000
+    },
+    "sock": {
+      "prefix": "/chat"
+    },
+    "static": {
+      "root": "./public",
+      "dirs": [
+        "/js",
+        "/css",
+        "/bower_components"
+      ]
+    },
+    "app": {
+      "dashboard": {
+        "bundle_js": "/js/bundle.js",
+        "styles": [
+          {
+            "href": "http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css"
+          },
+          {
+            "href": "/css/dashboard.css"
+          }
+        ]
+      }
+    }
+  }
+}
